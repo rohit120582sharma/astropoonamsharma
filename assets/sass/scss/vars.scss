@@ -1,0 +1,93 @@
+
+/* ---- Colors ---- */
+$black:#000000;
+$light-black:#2a2a2a;
+$white:#ffffff;
+
+$dark-gray:#5a5a5a;
+$medium-gray:#c7c6c6;
+$light-gray:#efefef;
+
+$dark-green:#919653;
+$light-green:#c3c679;
+$bright-green:#adca6d;
+
+$bright-red: #c62738;
+$bright-yellow: #ffcc00;
+$bright-brown: #ede2c4;
+
+/* ---- Google Fonts ---- */
+@import url(https://fonts.googleapis.com/css?family=Lato:300,400,700|Righteous|Sancreek&effect=vintage);
+$font-righteous:'Righteous', cursive;
+$font-sancreek:'Sancreek', cursive;
+$font-lato:'Lato', sans-serif;
+
+
+/* ---- Circle ----- */
+@mixin circle($height,$border-width){
+	height:$height;
+	width:$height;
+	border:1px solid #fff;
+	border-width:$border-width;
+	border-radius:50%;
+	display:block;
+}
+
+/*-- Transform --*/
+@mixin transform($prop) {
+    -webkit-transform: $prop;
+    -moz-transform: $prop;
+    -ms-transform: $prop;
+    -o-transform: $prop;
+    transform: $prop;
+    will-change:transform;
+}
+
+/*-- transition --*/
+@mixin transition($time, $ease) {
+    -moz-transition-duration: $time;
+    -o-transition-duration: $time;
+    -webkit-transition-duration: $time;
+    transition-duration: $time;
+    -moz-transition-timing-function: $ease;
+    -o-transition-timing-function: $ease;
+    -webkit-transition-timing-function: $ease;
+    transition-timing-function: $ease;
+}
+
+/*-- transition delay --*/
+@mixin transition-delay($time) {
+    -moz-transition-delay:$time;
+    -o-transition-delay:$time;
+    -webkit-transition-delay:$time;
+    transition-delay:$time;
+}
+
+/*-- animation delay --*/
+@mixin animation-delay($time) { 
+    -moz-animation-delay:$time;
+    -o-animation-delay:$time;
+    -webkit-animation-delay:$time;
+    animation-delay:$time;
+}
+
+@mixin animation-duration($time){
+    -moz-animation-duration:$time;
+    -o-animation-duration:$time;
+    -webkit-animation-duration:$time;
+    animation-duration:$time;
+} 
+@mixin bottomDivision($borderBottom:0px, $color:$light-green){
+    content: "";
+    display: block;
+    position: relative;
+    width: 70%;
+    height: 1px;
+    background-color: $color;
+    margin: $borderBottom 0;
+}
+
+@mixin bottomDivisionCenter($borderBottom:-7px, $color:$light-green){
+    @include bottomDivision($borderBottom, $color);
+    margin: $borderBottom auto;
+}

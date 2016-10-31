@@ -1,0 +1,571 @@
+
+/********************** Import - Start **********************/
+@import 'vars';
+@import 'common';
+/********************** Import - End **********************/
+
+
+/********************** Body - Start **********************/
+body{
+	@media (min-width: 992px){
+		&.scroll{
+			header{
+				.menuWrapper{
+					ul li{
+						a{
+							font-size: 1em!important;
+						}
+						img {
+							width: auto;
+							height: 80px!important;
+						}
+					}
+				}
+			}
+		}
+	}
+	.rootWrapper{
+		position: relative;
+		left: 0;
+		opacity: 1;
+		@include transition(.5s,ease-in-out);
+		&.slide{
+			left: 260px;
+			opacity: 0.4;
+		}
+		@media (min-width:992px){
+			left:0!important;
+			opacity: 1!important;
+		}
+	}
+}
+/********************** Body - End **********************/
+
+
+/********************** Header - Start **********************/
+.mobileHeader{
+	position: fixed;
+	width: 260px;
+	height: 100vh;
+	top: 0;
+	left: -260px;
+	z-index: 11;
+	@include transition(.5s,ease-in-out);
+	&.slide{
+		left: 0;
+	}
+	@media (min-width:992px){
+		display: none;
+	}
+
+	.mobile-nav-icon {
+		position: absolute;
+		top: 25px;
+		transform: translateY(-50%);
+		right: -60px;
+		cursor: pointer;
+		@media (min-width: 421px){
+			top: 35px;
+		}
+		@media (min-width: 769px){
+			top: 45px;
+		}
+		@media (min-width: 992px){
+			top: 60px;
+		}
+		ul{
+			padding: 0;
+			margin: 0;
+			li{
+				list-style: none;
+				width: 40px;
+				height: 4px;
+				background-color: $white;
+				margin-bottom: 6px;
+				border-radius: 5px;
+				&.third{
+					clear: both;
+					margin-bottom: 0;
+				}
+			}
+		}
+		@media (min-width: 992px){
+			display:none;
+		}
+	}
+	.mobileMenuWrapper{
+		position: relative;
+		height: 100%;
+		padding: 20px;
+		overflow: auto;
+		ul.menuLinks{
+			list-style: none;
+			padding: 0;
+			li{
+				a{
+					display: block;
+					font-size: 1.2em;
+					font-family: $font-sancreek;
+					text-transform: uppercase;
+					color: $white;
+					padding: 1em;
+					letter-spacing: 1px;
+					@include transition(.3s,ease-in-out);
+					&.active, &:hover, &:active, &:focus{
+						color: $bright-red;
+						text-decoration:none;
+					}
+				}
+			}
+		}
+		ul.social-icons{
+			padding: 0;
+			list-style: none;
+			margin-top: 3em;
+			li{
+				display: inline-block;
+				a{
+					color: $white;
+					padding: 0.5em 1em;
+					font-size: 1.5em;
+					@include transition(.3s,ease-in-out);
+					&.active, &:hover, &:active, &:focus{
+						color: $bright-red;
+						text-decoration:none;
+					}
+				}
+			}
+		}
+	}
+}
+
+header {
+	color:$white;
+
+	/* -------------- menu wrapper -------------- */
+	.menuWrapper{
+		position: fixed;
+		width: 100%;
+		z-index: 9;
+		background-color: #f9aa00;
+		box-shadow: 0px 1px 2px rgba(0,0,0,0.5);
+		@include transition(.3s,ease-in-out);
+		ul.menuLinks{
+			list-style: none;
+			text-align: center;
+			padding: 0;
+			li{
+				display: none;
+				margin: 0 18px;
+				min-height: 36px;
+				@media (min-width: 1200px){
+					margin: 0 25px;
+				}
+				a{
+					position: relative;
+					display: block;
+					padding: 10px 0;
+					font-size: 1.1em;
+					font-family: $font-sancreek;
+					text-transform: uppercase;
+					letter-spacing: 1px;
+					color: $white;
+					border-bottom: 2px solid $white;
+					@include transition(.3s,ease-in-out);
+					&:after{
+						content: "";
+						position: absolute;
+						left: 0;
+						bottom: -2px;
+						width: 0%;
+						height: 2px;
+						background-color: $bright-red;
+						@include transition(.3s,ease-in-out);
+					}
+					&.active, &:hover, &:active, &:focus{
+						color: $bright-red;
+						text-decoration:none;
+						//transform: rotateX(360deg);
+						transform-origin: 50% 70%;
+						&:after{
+							width:100%;
+						}
+					}
+				}
+				&.logo{
+					display: inline-block;
+					margin: 0;
+					a{
+						padding: 0;
+						border-bottom: none;
+						&:hover, &:active, &:focus{
+							text-decoration:none;
+						}
+						&:after{
+							background-color: transparent;
+						}
+						img{
+							width: auto;
+							height: 40px;
+							@include transition(.3s,ease-in-out);
+							@media (min-width: 421px){
+								height: 60px;
+							}
+							@media (min-width: 769px){
+								height: 80px;
+							}
+							@media (min-width: 992px){
+								height: 110px;
+							}
+						}
+					}
+				}
+				@media (min-width: 992px){
+					display: inline-block;
+				}
+			}
+		}
+	}
+
+	/* -------------- spotlight wrapper -------------- */
+	.spotlightWrapper{
+		padding: 50px 1em 1em;
+		height: 100vh;
+		min-height: 500px;
+		@media (min-width: 421px){
+			padding: 70px 1em 1em;
+		}
+		@media (min-width: 769px){
+			padding: 90px 1em 1em;
+		}
+		@media (min-width: 992px){
+			padding: 120px 3em 3em;
+		}
+		.banner-slider-list{
+			height: 100%;
+			.slick-list{
+				height: 100%;
+				.slick-track{
+					height: 100%;
+				}
+			}
+			.banner-slider-item{
+				height: 100%;
+				.slider-img{
+					position: relative;
+					padding: 2em;
+					height: 100%;
+					background-position: no-repeat;
+					background-position: center center;
+					background-size: cover;
+					.slider-content{
+						position: relative;
+						height: 100%;
+						border: 1px solid $light-gray;
+						background-color: rgba(0,0,0,0.6);
+						.inner-text{
+							position: relative;
+							max-width: 90%;
+							margin: auto;
+							top: 50%;
+							transform: translateY(-50%);
+							text-align: center;
+							h1{
+								position: relative;
+								display: inline-block;
+								font-family: $font-sancreek;
+								font-size: 2em;
+								margin: 0;
+								text-shadow: 2px 2px $light-black;
+								&:after{
+									@include bottomDivisionCenter(0.5em, $white);
+								}
+								@media (min-width: 640px){
+									font-size: 3em;
+								}
+								@media (min-width: 800px){
+									font-size: 4em;
+								}
+								@media (min-width: 1440px){
+									font-size: 5em;
+								}
+							}
+							p{
+								display: none;
+								font-size: 1em;
+								letter-spacing: 1px;
+								line-height: 1.5;
+								font-weight: 300;
+								text-transform: lowercase;
+								@media (min-width: 640px){
+									display: block;
+								}
+								@media (min-width: 800px){
+									font-size: 1em;
+								}
+								@media (min-width: 1440px){
+									font-size: 1.3em;
+								}
+							}
+							img.astro-pic{
+								margin: auto;
+							}
+						}
+					}
+				}
+			}
+			.banner-slider-item.slider-home{
+				.slider-img{
+					background-image:url("../images/saiastro-2.jpg");
+					.slider-content{
+						background-color: rgba(0,0,0,0.0);
+					}
+				}
+			}
+			.banner-slider-item.slider-healing{
+				.slider-img{
+					background-image:url("../images/healing.jpg");
+				}
+			}
+			.banner-slider-item.slider-love{
+				.slider-img{
+					background-image:url("../images/love-1.jpg");
+				}
+			}
+		}
+		ul.slick-nav{
+			padding: 0;
+			margin: 0;
+			position: relative;
+			top: 1.5em;
+			transform: translateY(-50%);
+			text-align: center;
+			li{
+				display: inline-block;
+				visibility: hidden;
+				font-size: 2.5em;
+				color: $white;
+				margin: 0 5px;
+				cursor: pointer;
+				@include transition(.3s,ease-in-out);
+				&:hover{
+					color: $black;
+				}
+			}
+		}
+	}
+}
+/********************** Header - End **********************/
+
+
+
+/********************** Body - Start **********************/
+.mainWrapper{
+	color: $black;
+    background-color: $white;
+    .container{
+    	padding-top: 15px;
+    	padding-bottom: 15px;
+    }
+	h2{
+		position: relative;
+		display: inline-block;
+		font-size: 3em;
+		font-weight: 300;
+		text-transform: capitalize;
+		&:after{
+			@include bottomDivisionCenter(30px, $black);
+		}
+	}
+	h3{
+		font-size: 1.5em;
+	}
+	p{
+		font-size: 1.1em;
+		line-height: 1.4em;
+		font-weight: 100;
+	}
+	
+}
+
+/* ------------------ Component Buttons ------------------ */
+.compRedBtn{
+	display: inline-block;
+	padding: 10px 15px;
+	border: 1px solid $bright-red;
+	font-size: 1.1em;
+	color: $bright-red;
+	background-color: $white;
+	&.active, &:hover, &:active, &:focus{
+		text-decoration:none;
+		color: $white;
+		background-color: $bright-red;
+	}
+}
+
+/* ------------------ Component Image-Text Dual ------------------ */
+.compImgTxtDual{
+	margin-bottom: 30px 0;
+	h3, p{
+		margin-bottom: 20px;
+	}
+	.imgWrapper{
+		text-align: center;
+		img{
+			display: inline-block;
+		}
+	}
+	.txtWrapper{
+	}
+	&.rtl div[class^="col"]{
+		float: right;
+	}
+	@media (max-width: 768px){
+		margin-bottom: 15px;
+		&:after{
+			content:"";
+			display: block;
+			width: 70%;
+			height: 1px;
+			background-color: $medium-gray;
+			margin: 15px auto 0;
+		}
+		div[class^="col"]{
+			text-align: center;
+		}
+		.imgWrapper{
+			img{
+				max-width: 220px;
+			}
+		}
+	}
+}
+
+/* ------------------ Component Accordion ------------------ */
+.compAccordion{
+	a{
+		display: block;
+		padding: 20px;
+		text-align: left;
+		font-size: 1em;
+		color: $light-black;
+		background-color: $light-gray;
+		border-top-left-radius:10px;
+		border-bottom-right-radius:10px;
+		margin-top: 10px;
+		&:hover, &:active, &:focus{
+			text-decoration:none;
+		}
+		&:hover{
+			color: $white;
+			background-color: $medium-gray;
+		}
+		&.active{
+			color: $white;
+			background-color: $medium-gray;
+		}
+		i{
+			float: right;
+		}
+	}
+	.content{
+		padding: 20px;
+	}
+}
+
+/* ------------------ Component Testimonial ------------------ */
+.compTestimonial{
+	.name{
+		position: relative;
+		padding: 15px;
+		border-radius: 5px;
+		background-color: $bright-brown;
+		&:after{
+			content:"";
+			position:absolute;
+			left: 2em;
+			bottom: -12px;
+			width: 0; 
+			height: 0; 
+			border-left: 15px solid transparent;
+			border-right: 15px solid transparent;
+			border-top: 15px solid $bright-brown;
+		}
+	}
+	.tweet{
+		padding: 15px;
+		&:before{
+			content: '" ';
+			font-size: 1.5em;
+			font-weight: 400;
+		}
+		&:after{
+			content: ' "';
+			font-size: 1.5em;
+			font-weight: 400;
+		}
+	}
+}
+/********************** Body - End **********************/
+
+
+
+/********************** Footer - Start **********************/
+footer{
+	background-color: $black; color: $white;
+	address{
+		margin-bottom: 0em;
+		padding: 20px 0 0px 0;
+		float: right;
+		width: 290px;
+
+		h6{
+			font-size: 1.10em;
+			position: relative;
+			display: inline-block;
+			margin-bottom: 0;
+			&:after{
+				@include bottomDivision(7px, $white);
+			}
+		}
+		p{
+			font-size: 0.9em;
+			padding-left: 0em;
+			a{
+				color: $dark-green;
+				&:hover,&:active,&:focus{
+					color: $light-green;
+				}
+			}
+		}
+	}
+	.copyright{
+		text-align: center;
+		font-size: 0.8em;
+		color: $medium-gray;
+	}
+	&>.container:before{
+		content: "";
+	    width: 100%;
+	    height: 1px;
+	    background-color: $dark-gray;
+	    opacity: 0.5;
+	}
+
+	@media (max-width: 640px){
+		.row > div[class^="col"]{
+			width: 100%;
+		}
+		.img-footer-logo{
+			margin: auto;
+		}
+		address{
+			float: none;
+			width: auto;
+		}
+		.copyright{
+			text-align: right;
+		}
+	}
+}
+/********************** Footer - End **********************/

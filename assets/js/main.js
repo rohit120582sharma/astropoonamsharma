@@ -32,32 +32,6 @@ $(document).ready(function(){
 	/* ------------------ Hamburger - End ------------------ */
 
 
-	/* ------------------ Window Scroll - Start ------------------ */
-	$(window).bind("scroll", function(){
-		windowScrollHandler();
-	});
-	windowScrollHandler();
-	function windowScrollHandler(){
-		// add/remove slide class in body
-		var scrollTop = $(document).scrollTop();
-		if(scrollTop >= 120){
-			$("body").addClass("scroll");
-		}else{
-			$("body").removeClass("scroll");
-		}
-		$("[data-anim-class^='animated']").each(function(index, element){
-			var domElem = $(this);
-			var vh = verge.viewport().height * -0.25;
-			var animClass = domElem.attr("data-anim-class");
-			if(verge.inViewport(domElem, vh)){
-				domElem.css('visibility','visible');
-				domElem.addClass(animClass);
-			}
-		});
-	}
-	/* ------------------ Window Scroll - End ------------------ */
-
-
 	/* ------------------ Home Slider - Start ------------------ */
 	var sliderHome = $('#slider-home');
 	var slidesLen = sliderHome.children("div").length;
@@ -92,6 +66,33 @@ $(document).ready(function(){
 	});
 	/* ------------------ Home Slider - End ------------------ */
 
+
+	/* ------------------ Window Scroll - Start ------------------ */
+	$(window).bind("scroll", function(){
+		windowScrollHandler();
+	});
+	windowScrollHandler();
+	function windowScrollHandler(){
+		// add/remove slide class in body
+		var scrollTop = $(document).scrollTop();
+		if(scrollTop >= 120){
+			$("body").addClass("scroll");
+		}else{
+			$("body").removeClass("scroll");
+		}
+		$("[data-anim-class^='animated']").each(function(index, element){
+			var domElem = $(this);
+			var vh = verge.viewport().height * -0.25;
+			var animClass = domElem.attr("data-anim-class");
+			if(verge.inViewport(domElem, vh)){
+				domElem.css('visibility','visible');
+				domElem.addClass(animClass);
+			}
+		});
+	}
+	/* ------------------ Window Scroll - End ------------------ */
+
+
 	/* ------------------ Accordion - Start ------------------ */
 	$(".compAccordion").each(function(){
 		var accordion = $(this);
@@ -123,4 +124,47 @@ $(document).ready(function(){
 	});
 	$(".compAccordion").eq(0).children("a").eq(0).trigger("click");
 	/* ------------------ Accordion - End ------------------ */
+
+
+	/* ------------------ Cotact validation - Start ------------------ */
+	$("#contact").validate({
+		rules:{
+			name:{
+				required: true,
+				minlength: 2,
+				onlyalphabatic: true
+			},
+			email:{
+				required: true,
+				email: true,
+				EmailPatternchk: true
+			},
+			phone:{
+				required: true,
+				digits: true,
+				minlength: 10,
+				maxlength: 10
+			}
+		},
+		messages:{
+			name:{
+				required: "This field is required",
+				minlength: "Please enter a valid name",
+				onlyalphabatic: "Please enter a valid name"
+			},
+			email:{
+				required: "This field is required",
+				email: "Please enter a valid email",
+				EmailPatternchk: "Please enter a valid email"
+			},
+			phone:{
+				required: "This field is required",
+				digits: "Please enter a valid number",
+				minlength: "Please enter at least 10 digits",
+				maxlength: "Please enter at least 10 digits"
+			}
+		},
+		error_class: "error"
+	});
+	/* ------------------ Cotact validation - End ------------------ */
 });

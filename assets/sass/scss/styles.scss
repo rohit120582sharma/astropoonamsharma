@@ -37,12 +37,20 @@ body{
 			left:0!important;
 			opacity: 1!important;
 		}
+
+		&.innerPage{
+			header{
+				.spotlightWrapper{
+					height: 80vh;
+				}
+			}
+		}
 	}
 }
 /********************** Body - End **********************/
 
 
-/********************** Header - Start **********************/
+/********************** Mobile-Header - Start **********************/
 .mobileHeader{
 	position: fixed;
 	width: 260px;
@@ -138,7 +146,10 @@ body{
 		}
 	}
 }
+/********************** Mobile-Header - End **********************/
 
+
+/********************** Header - Start **********************/
 header {
 	color:$white;
 
@@ -332,6 +343,11 @@ header {
 					background-image:url("../images/love-1.jpg");
 				}
 			}
+			.banner-slider-item.slider-store{
+				.slider-img{
+					background-image:url("../images/banner-1.jpg");
+				}
+			}
 		}
 		ul.slick-nav{
 			padding: 0;
@@ -434,16 +450,49 @@ header {
 }
 
 /* ------------------ Component Buttons ------------------ */
-.compRedBtn{
-	display: inline-block;
+.compBtn{
+	position: relative;
+	overflow: hidden;
+	display: inline-table;
 	padding: 10px 15px;
-	border: 1px solid $bright-red;
+	border: 1px solid $black;
 	font-size: 1.1em;
-	color: $bright-red;
-	background-color: $white;
+	color: $black;
+	&:before,&:after{
+		content:"";
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		background-color: $black;
+		z-index: -1;
+	}
+	&:before{
+		opacity: 0.5;
+		transform: translate(0, 100%);
+		@include transition(.3s,ease-in-out);
+	}
+	&:after{
+		transform: translate(0, -100%);
+		@include transition-delay(0.3s);
+		@include transition(.3s,ease-in-out);
+	}
 	&.active, &:hover, &:active, &:focus{
 		text-decoration:none;
 		color: $white;
+		&:before{
+			transform: translate(0, 0);
+		}
+		&:after{
+			transform: translate(0, 0);
+		}
+	}
+}
+.compRedBtn{
+	color: $bright-red;
+	border: 1px solid $bright-red;
+	&:before,&:after{
 		background-color: $bright-red;
 	}
 }
@@ -482,6 +531,41 @@ header {
 			img{
 				max-width: 220px;
 			}
+		}
+	}
+}
+
+/* ------------------ Component Store-Item ------------------ */
+.align-center{
+	text-align: center;
+	&>div{
+		float: none;
+		display: inline-block;
+		margin-left: -4px;
+		vertical-align: top;
+	}
+}
+.compStoreItem{
+	margin-bottom: 30px;
+	border-radius: 6px;
+	box-shadow:0px 0px 3px 1px rgba(0,0,0,0.22);
+	overflow: hidden;
+	.item-thumb{
+		&>img{
+			width: 100%;
+		}
+	}
+	.item-content{
+		padding: 15px;
+		.name{
+			font-size: 1.1em;
+			text-transform: uppercase;
+			text-overflow: ellipsis;
+			overflow: hidden;
+			white-space: nowrap;
+		}
+		.description{
+			font-size: 1em;
 		}
 	}
 }
@@ -584,17 +668,48 @@ footer{
 			}
 		}
 	}
-	.copyright{
-		text-align: left;
-		font-size: 0.8em;
-		color: $medium-gray;
-	}
-	&>.container:before{
-		content: "";
-	    width: 100%;
-	    height: 1px;
-	    background-color: $dark-gray;
-	    opacity: 0.5;
+	.footerBottom{
+		padding: 15px 0 0;
+		&:before{
+			content: "";
+			position: absolute;
+			left: 0;
+			top: 0;
+		    width: 100%;
+		    height: 1px;
+		    background-color: $dark-gray;
+		    opacity: 0.5;
+		}
+		.copyright{
+			display: inline-block;
+			text-align: left;
+			font-size: 0.8em;
+			color: $medium-gray;
+		}
+		.social-icons{
+			float: right;
+			list-style: none;
+			li{
+				display: inline-block;
+				a{
+					color: $dark-green;
+					text-decoration: none;
+					padding: 0.5em;
+					font-size: 1em;
+					i.fa{
+						transform: scale(1,1);
+						@include transition(.3s,ease-in-out);
+					}
+					&:hover,&:active,&:focus{
+						color: $light-green;
+						text-decoration:none;
+						i.fa{
+							transform: scale(1.5,1.5);
+						}
+					}
+				}
+			}
+		}
 	}
 
 	@media (max-width: 640px){
@@ -607,9 +722,6 @@ footer{
 		address{
 			float: none;
 			width: auto;
-		}
-		.copyright{
-			text-align: right;
 		}
 	}
 }

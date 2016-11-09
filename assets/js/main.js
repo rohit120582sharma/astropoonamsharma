@@ -167,4 +167,21 @@ $(document).ready(function(){
 		error_class: "error"
 	});
 	/* ------------------ Cotact validation - End ------------------ */
+
+	$(".compStoreItem").matchHeight({
+		byRow: true,
+		property: 'height',
+		target: null,
+		remove: false
+	});
+
+	$(".item-thumb").fancybox({
+		openEffect	: 'elastic',
+		closeEffect	: 'elastic',
+		helpers : {
+			title : {
+				type : 'inside'
+			}
+		}
+	});
 });

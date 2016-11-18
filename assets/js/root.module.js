@@ -8,21 +8,24 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
-var platform_browser_1 = require('@angular/platform-browser');
-var app_component_1 = require("./app.component");
-var AppModule = (function () {
-    function AppModule() {
+var core_1 = require("@angular/core");
+var platform_browser_1 = require("@angular/platform-browser");
+var mobile_navigation_component_1 = require("./mobile.navigation.component");
+var header_component_1 = require("./header.component");
+var storelist_component_1 = require("./storelist.component");
+var footer_component_1 = require("./footer.component");
+var RootModule = (function () {
+    function RootModule() {
     }
-    AppModule = __decorate([
+    RootModule = __decorate([
         core_1.NgModule({
             imports: [platform_browser_1.BrowserModule],
-            declarations: [app_component_1.AppComponent],
-            bootstrap: [app_component_1.AppComponent]
+            declarations: [storelist_component_1.StoreListComponent, mobile_navigation_component_1.MobileNavigationComponent, header_component_1.HeaderComponent, footer_component_1.FooterComponent],
+            bootstrap: [mobile_navigation_component_1.MobileNavigationComponent, header_component_1.HeaderComponent, footer_component_1.FooterComponent]
         }), 
         __metadata('design:paramtypes', [])
-    ], AppModule);
-    return AppModule;
+    ], RootModule);
+    return RootModule;
 }());
-exports.AppModule = AppModule;
-//# sourceMappingURL=app.module.js.map
+exports.RootModule = RootModule;
+//# sourceMappingURL=root.module.js.map

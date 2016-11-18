@@ -17,49 +17,11 @@
 
 	<body>
 		<!-- Mobile Menu - Start -->
-		<div class="mobileHeader yellowGradient">
-			<div class="mobile-nav-icon">
-	            <ul>
-	            	<li class="first"></li>
-	                <li class="second"></li>
-	                <li class="third"></li>
-	            </ul>
-	        </div>
-			<div class="mobileMenuWrapper">
-				<ul class="menuLinks">
-					<li><a href="#"></a></li>
-					<li><a href="#">Home</a></li>
-					<li><a href="#">Services</a></li>
-					<li><a href="#">Store</a></li>
-					<li><a href="#">Contact Me</a></li>
-				</ul>
-				<ul class="social-icons">
-					<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-					<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-					<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-				</ul>
-			</div>
-		</div>
-		<!-- Mobile Menu - End -->
+		<mobile-navigation-component></mobile-navigation-component>
 
 		<div class="rootWrapper innerPage">
 			<!-- Header - Start -->
-			<header class="yellowGradient">
-				<div class="menuWrapper">
-					<div class="container">
-						<div class="row">
-							<div class="col-xs-12">
-								<ul class="menuLinks">
-									<li><a href="#">Home</a></li>
-									<li><a href="#">Services</a></li>
-									<li class="logo"><a href="#"><img src="../assets/images/logo.png"></a></li>
-									<li><a href="#">Store</a></li>
-									<li><a href="#">Contact Me</a></li>
-								</ul>
-							</div>
-						</div>
-					</div>
-				</div>
+			<header class="yellowGradient" header-component>
 				<div class="spotlightWrapper">
 					<div class="banner-slider-list" id="slider-home">
 						<div class="banner-slider-item slider-store">
@@ -87,7 +49,6 @@
 					</ul>
 				</div>
 			</header>
-			<!-- Header - End -->
 
 			<!-- Section - End -->
 			<section class="mainWrapper">
@@ -97,135 +58,16 @@
 							<div class="text-center">
 								<h2>Our Store</h2>
 								<p></p>
-								<my-app>Loading...</my-app>
 							</div>
 						</div>
 					</div>
-					<div class="row align-center">
-						<div class="col-xs-12 col-sm-6 col-md-4">
-							<div class="compBox compStoreItem">
-								<a class="item-thumb" href="../assets/images/portfolio/1.jpg" rel="gallery" title="LAXMI CHARAN PADUKA"><img src="../assets/images/portfolio/1.jpg"></a>
-								<div class="item-content">
-									<p class="name">LAXMI CHARAN PADUKA</p>
-									<p class="description">The product in display is Laxmi charan paduka. Devi mahalakshmi is seated on blossomed kamal flower, it is considered that establishing this at home can open the doors to fortune for the whole family.</p>
-								</div>
-							</div>
-						</div>
-						<div class="col-xs-12 col-sm-6 col-md-4">
-							<div class="compBox compStoreItem">
-								<a class="item-thumb" href="../assets/images/portfolio/2.jpg" rel="gallery" title="METAL KAMDHENU COW"><img src="../assets/images/portfolio/2.jpg"></a>
-								<div class="item-content">
-									<p class="name">METAL KAMDHENU COW</p>
-									<p class="description">The product in display is Kamdhenu Cow made from metal and finished in silver color. It is considered as holy and divine cow and is deemed as a harbinger of bliss, prosperity, and good health.</p>
-								</div>
-							</div>
-						</div>
-						<div class="col-xs-12 col-sm-6 col-md-4">
-							<div class="compBox compStoreItem">
-								<a class="item-thumb" href="../assets/images/portfolio/3.jpg" rel="gallery" title="METAL KACHAP SHRI YANTRA"><img src="../assets/images/portfolio/3.jpg"></a>
-								<div class="item-content">
-									<p class="name">METAL KACHAP SHRI YANTRA</p>
-									<p class="description">The product in display is kachap shri yantra, which is made from metal and is finished in golden color. It is considered that establishing this yantra at home can open the doors to fortune for the whole family.</p>
-								</div>
-							</div>
-						</div>
-						<div class="col-xs-12 col-sm-6 col-md-4">
-							<div class="compBox compStoreItem">
-								<a class="item-thumb" href="../assets/images/portfolio/4.jpg" rel="gallery" title="TAWIZ"><img src="../assets/images/portfolio/4.jpg"></a>
-								<div class="item-content">
-									<p class="name">TAWIZ</p>
-									<p class="description">For concentration of your child protect from nazar dosh.</p>
-								</div>
-							</div>
-						</div>
-						<div class="col-xs-12 col-sm-6 col-md-4">
-							<div class="compBox compStoreItem">
-								<a class="item-thumb" href="../assets/images/portfolio/5.jpg" rel="gallery" title="SARASWATI YANTRA"><img src="../assets/images/portfolio/5.jpg"></a>
-								<div class="item-content">
-									<p class="name">SARASWATI YANTRA</p>
-									<p class="description">For good education.</p>
-								</div>
-							</div>
-						</div>
-						<div class="col-xs-12 col-sm-6 col-md-4">
-							<div class="compBox compStoreItem">
-								<a class="item-thumb" href="../assets/images/portfolio/6.jpg" rel="gallery" title="RUDRAKSHA BRACELET"><img src="../assets/images/portfolio/6.jpg"></a>
-								<div class="item-content">
-									<p class="name">RUDRAKSHA BRACELET</p>
-									<p class="description">For positive aura positivity cure diseases.</p>
-								</div>
-							</div>
-						</div>
-						<div class="col-xs-12 col-sm-6 col-md-4">
-							<div class="compBox compStoreItem">
-								<a class="item-thumb" href="../assets/images/portfolio/7.jpg" rel="gallery" title="LAXMI DAYAK POTLI"><img src="../assets/images/portfolio/7.jpg"></a>
-								<div class="item-content">
-									<p class="name">LAXMI DAYAK POTLI</p>
-									<p class="description">For good bank balance &amp; money.</p>
-								</div>
-							</div>
-						</div>
-					</div>
+					<div class="row align-center" store-list-component>Loading...</div>
 				</div>
 			</section>
-			<!-- Section - End -->
 
 			<!-- Footer - Start -->
-			<footer>
-				<div class="container">
-					<div class="row">
-						<div class="col-xs-6 col-md-4">
-							<img class="img-responsive img-footer-logo" src="../assets/images/footer-logo.jpg" alt="Sai Astro Solutions" title="Sai Astro Solutions" />
-						</div>
-						<div class="col-xs-6 col-md-4 hidden-xs hidden-sm"></div>
-						<div class="col-xs-6 col-md-4">
-							<address>
-								<h6>Contact Us</h6>
-								<p>
-									Mrs Poonam Sharma
-									<br>E-mail :- <a href="mailto:info@astropoonamsharma.com">info@astropoonamsharma.com</a>
-									<br>E-mail :- <a href="mailto:question@astropoonamsharma.com">question@astropoonamsharma.com</a>
-									<br>Phone : <a href="tel:+91 9893553174">+91 9893553174</a>
-								</p>
-							</address>
-							<address>
-								<h6>Address</h6>
-								<p>
-									C70, Old Minal Residency, JK-Road
-									<br>Bhopal, Madhya Pradesh, Pincode-462023
-									<br>Country-India
-								</p>
-							</address>
-						</div>
-						<div class="col-xs-12">
-							<div class="footerBottom">
-								<p class="copyright">© 2016. All Rights Reserved.</p>
-								<ul class="social-icons">
-									<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-									<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-									<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-								</ul>
-							</div>
-						</div>
-					</div>
-				</div>
-			</footer>
-			<!-- Footer - End -->
+			<footer footer-component></footer>
 		</div>
-
-		<!-- 1. Load libraries -->
-		<!-- Polyfill for older browsers -->
-		<script src="../node_modules/core-js/client/shim.min.js"></script>
-
-		<script src="../node_modules/zone.js/dist/zone.js"></script>
-		<script src="../node_modules/reflect-metadata/Reflect.js"></script>
-		<script src="../node_modules/systemjs/dist/system.src.js"></script>
-
-		<!-- 2. Configure SystemJS -->
-		<script src="../systemjs.config.js"></script>
-		<script>
-			System.import('app').catch(function(err){ console.error(err); });
-		</script>
 
 		<!-- Script - Start -->
 		<script type="text/javascript" src="../assets/js/vendor/jquery-1.11.2.min.js"></script>
@@ -239,5 +81,19 @@
 		<script type="text/javascript" src="../assets/fancybox/jquery.fancybox.js"></script>
 		<script type="text/javascript" src="../assets/js/main.js"></script>
 		<!-- Script - End -->
+
+		<!-- 1. Angular libraries -->
+		<!-- Polyfill for older browsers -->
+		<script src="../node_modules/core-js/client/shim.min.js"></script>
+
+		<script src="../node_modules/zone.js/dist/zone.js"></script>
+		<script src="../node_modules/reflect-metadata/Reflect.js"></script>
+		<script src="../node_modules/systemjs/dist/system.src.js"></script>
+
+		<!-- 2. Configure SystemJS -->
+		<script src="../systemjs.config.js"></script>
+		<script>
+			System.import('app').catch(function(err){ console.error(err); });
+		</script>
 	</body>
 </html>

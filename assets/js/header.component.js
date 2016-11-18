@@ -9,17 +9,19 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require("@angular/core");
-var AppComponent = (function () {
-    function AppComponent() {
+var header_navigation_component_1 = require("./header.navigation.component");
+var HeaderComponent = (function () {
+    function HeaderComponent() {
     }
-    AppComponent = __decorate([
+    HeaderComponent = __decorate([
         core_1.Component({
-            selector: 'my-app',
-            template: "<h1>Hello Angular 2!</h1>"
+            selector: '[header-component]',
+            directives: [header_navigation_component_1.HeaderNavigationComponent],
+            template: "\n\t\t<div class=\"menuWrapper\" header-navigation-component></div>\n\t"
         }), 
         __metadata('design:paramtypes', [])
-    ], AppComponent);
-    return AppComponent;
+    ], HeaderComponent);
+    return HeaderComponent;
 }());
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+exports.HeaderComponent = HeaderComponent;
+//# sourceMappingURL=header.component.js.map

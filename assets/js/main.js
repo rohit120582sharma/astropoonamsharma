@@ -1,7 +1,30 @@
 
 
 $(document).ready(function(){
-	/* ------------------ Hamburger - Start ------------------ */
+	/* ------------------ Slider ------------------ */
+	homepageSpotlightSlider();
+
+	/* ------------------ Window Scroll and Viewport ------------------ */
+	viewportHandler();
+
+	/* ------------------ Accordion ------------------ */
+	accordionHandler();
+
+	/* ------------------ Form validation ------------------ */
+	contactFormValidationHandler();
+
+	/* ------------------ Go Top Action ------------------ */
+	$(".btnGoTop > a").bind("click", function(){
+		$("body, html").stop(true, false);
+		$("body, html").animate({scrollTop:0},{duration:300});
+		return false;
+	});
+});
+
+
+
+/* ********************** Mobile Navigation - Start ********************** */
+function hamburgerHandler(){
 	var menuUL = $(".mobile-nav-icon > ul");
 	var rootWrapper = $(".rootWrapper");
 	var mobileHeader = $(".mobileHeader");
@@ -29,10 +52,12 @@ $(document).ready(function(){
 		rootWrapper.removeClass("slide");
 		mobileHeader.removeClass("slide");
 	}
-	/* ------------------ Hamburger - End ------------------ */
+}
 
 
-	/* ------------------ Home Slider - Start ------------------ */
+
+/* ********************** Slider - Start ********************** */
+function homepageSpotlightSlider(){
 	var sliderHome = $('#slider-home');
 	var slidesLen = sliderHome.children("div").length;
 	var slideNavPrev = $(".slick-nav > .icon-left-arrow");
@@ -64,10 +89,12 @@ $(document).ready(function(){
 		sliderHome.slick('slickNext');
 		return false;
 	});
-	/* ------------------ Home Slider - End ------------------ */
+}
 
 
-	/* ------------------ Window Scroll - Start ------------------ */
+
+/* ********************** Viewport - Start ********************** */
+function viewportHandler(){
 	$(window).bind("scroll", function(){
 		windowScrollHandler();
 	});
@@ -90,10 +117,12 @@ $(document).ready(function(){
 			}
 		});
 	}
-	/* ------------------ Window Scroll - End ------------------ */
+}
 
 
-	/* ------------------ Accordion - Start ------------------ */
+
+/* ********************** Accordion - Start ********************** */
+function accordionHandler(){
 	$(".compAccordion").each(function(){
 		var accordion = $(this);
 		var aTags = accordion.children("a");
@@ -123,10 +152,47 @@ $(document).ready(function(){
 		});
 	});
 	$(".compAccordion").eq(0).children("a").eq(0).trigger("click");
-	/* ------------------ Accordion - End ------------------ */
+}
 
 
-	/* ------------------ Cotact validation - Start ------------------ */
+
+/* ********************** Light Box - Start ********************** */
+function lightBoxHandler(className){
+	var items = $(className);
+	if(items.length <= 0){
+		return;
+	}
+	items.fancybox({
+		openEffect	: 'elastic',
+		closeEffect	: 'elastic',
+		helpers : {
+			title : {
+				type : 'inside'
+			}
+		}
+	});
+}
+
+
+
+/* ********************** Match Height - Start ********************** */
+function matchHeightHandler(className){
+	var items = $(className);
+	if(items.length <= 0){
+		return;
+	}
+	items.matchHeight({
+		byRow: true,
+		property: 'height',
+		target: null,
+		remove: false
+	});
+} 
+
+
+
+/* ********************** Contact Form Validation - Start ********************** */
+function contactFormValidationHandler(){
 	$("#contact").validate({
 		rules:{
 			name:{
@@ -166,22 +232,4 @@ $(document).ready(function(){
 		},
 		error_class: "error"
 	});
-	/* ------------------ Cotact validation - End ------------------ */
-
-	$(".compStoreItem").matchHeight({
-		byRow: true,
-		property: 'height',
-		target: null,
-		remove: false
-	});
-
-	$(".item-thumb").fancybox({
-		openEffect	: 'elastic',
-		closeEffect	: 'elastic',
-		helpers : {
-			title : {
-				type : 'inside'
-			}
-		}
-	});
-});
+}

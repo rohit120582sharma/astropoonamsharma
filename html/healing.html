@@ -16,30 +16,7 @@
 
 	<body>
 		<!-- Mobile Menu - Start -->
-		<div class="mobileHeader yellowGradient">
-			<div class="mobile-nav-icon">
-	            <ul>
-	            	<li class="first"></li>
-	                <li class="second"></li>
-	                <li class="third"></li>
-	            </ul>
-	        </div>
-			<div class="mobileMenuWrapper">
-				<ul class="menuLinks">
-					<li><a href="#"></a></li>
-					<li><a href="#">Home</a></li>
-					<li><a href="#">Services</a></li>
-					<li><a href="#">Store</a></li>
-					<li><a href="#">Contact Me</a></li>
-				</ul>
-				<ul class="social-icons">
-					<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-					<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-					<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-				</ul>
-			</div>
-		</div>
-		<!-- Mobile Menu - End -->
+		<mobile-navigation-component></mobile-navigation-component>
 
 		<div class="rootWrapper innerPage">
 			<!-- Header - Start -->
@@ -86,7 +63,6 @@
 					</ul>
 				</div>
 			</header>
-			<!-- Header - End -->
 
 			<!-- Section - End -->
 			<section class="mainWrapper">
@@ -150,49 +126,9 @@
 					</div>
 				</div>
 			</section>
-			<!-- Section - End -->
 
 			<!-- Footer - Start -->
-			<footer>
-				<div class="container">
-					<div class="row">
-						<div class="col-xs-6 col-md-4">
-							<img class="img-responsive img-footer-logo" src="../assets/images/footer-logo.jpg" alt="Sai Astro Solutions" title="Sai Astro Solutions" />
-						</div>
-						<div class="col-xs-6 col-md-4 hidden-xs hidden-sm"></div>
-						<div class="col-xs-6 col-md-4">
-							<address>
-								<h6>Contact Us</h6>
-								<p>
-									Mrs Poonam Sharma
-									<br>E-mail :- <a href="mailto:info@astropoonamsharma.com">info@astropoonamsharma.com</a>
-									<br>E-mail :- <a href="mailto:question@astropoonamsharma.com">question@astropoonamsharma.com</a>
-									<br>Phone : <a href="tel:+91 9893553174">+91 9893553174</a>
-								</p>
-							</address>
-							<address>
-								<h6>Address</h6>
-								<p>
-									C70, Old Minal Residency, JK-Road
-									<br>Bhopal, Madhya Pradesh, Pincode-462023
-									<br>Country-India
-								</p>
-							</address>
-						</div>
-						<div class="col-xs-12">
-							<div class="footerBottom">
-								<p class="copyright">© 2016. All Rights Reserved.</p>
-								<ul class="social-icons">
-									<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-									<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-									<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-								</ul>
-							</div>
-						</div>
-					</div>
-				</div>
-			</footer>
-			<!-- Footer - End -->
+			<footer footer-component></footer>
 		</div>
 
 		<!-- Script - Start -->
@@ -207,5 +143,19 @@
 		<script type="text/javascript" src="../assets/fancybox/jquery.fancybox.js"></script>
 		<script type="text/javascript" src="../assets/js/main.js"></script>
 		<!-- Script - End -->
+
+		<!-- 1. Angular libraries -->
+		<!-- Polyfill for older browsers -->
+		<script src="../node_modules/core-js/client/shim.min.js"></script>
+
+		<script src="../node_modules/zone.js/dist/zone.js"></script>
+		<script src="../node_modules/reflect-metadata/Reflect.js"></script>
+		<script src="../node_modules/systemjs/dist/system.src.js"></script>
+
+		<!-- 2. Configure SystemJS -->
+		<script src="../systemjs.config.js"></script>
+		<script>
+			System.import('app').catch(function(err){ console.error(err); });
+		</script>
 	</body>
 </html>

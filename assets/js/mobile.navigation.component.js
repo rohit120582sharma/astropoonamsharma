@@ -9,19 +9,22 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require("@angular/core");
+var utility_service_1 = require("./utility.service");
 var MobileNavigationComponent = (function () {
-    function MobileNavigationComponent() {
+    function MobileNavigationComponent(elementRef, utilityService) {
+        this.elementRef = elementRef;
+        this.utilityService = utilityService;
     }
     MobileNavigationComponent.prototype.ngAfterViewInit = function () {
         /* ------------------ Hamburger ------------------ */
-        hamburgerHandler();
+        this.utilityService.hamburgerHandler();
     };
     MobileNavigationComponent = __decorate([
         core_1.Component({
             selector: 'mobile-navigation-component',
-            template: "\n\t\t<div class=\"mobileHeader yellowGradient\">\n\t\t\t<div class=\"mobile-nav-icon\">\n\t            <ul>\n\t            \t<li class=\"first\"></li>\n\t                <li class=\"second\"></li>\n\t                <li class=\"third\"></li>\n\t            </ul>\n\t        </div>\n\t\t\t<div class=\"mobileMenuWrapper\">\n\t\t\t\t<ul class=\"menuLinks\">\n\t\t\t\t\t<li><a href=\"javascript:void(0);\"></a></li>\n\t\t\t\t\t<li><a href=\"index.html\">Home</a></li>\n\t\t\t\t\t<li><a href=\"about-me.html\">Services</a></li>\n\t\t\t\t\t<li><a href=\"store.html\">Store</a></li>\n\t\t\t\t\t<li><a href=\"contact-us.html\">Contact Me</a></li>\n\t\t\t\t</ul>\n\t\t\t\t<ul class=\"social-icons\">\n\t\t\t\t\t<li><a href=\"#\"><i class=\"fa fa-facebook\"></i></a></li>\n\t\t\t\t\t<li><a href=\"#\"><i class=\"fa fa-twitter\"></i></a></li>\n\t\t\t\t\t<li><a href=\"#\"><i class=\"fa fa-google-plus\"></i></a></li>\n\t\t\t\t</ul>\n\t\t\t</div>\n\t\t</div>\n\t"
+            template: "\n\t\t<div class=\"mobileHeader yellowGradient\">\n\t\t\t<div class=\"mobile-nav-icon\">\n\t            <ul>\n\t            \t<li class=\"first\"></li>\n\t                <li class=\"second\"></li>\n\t                <li class=\"third\"></li>\n\t            </ul>\n\t        </div>\n\t\t\t<div class=\"mobileMenuWrapper\">\n\t\t\t\t<ul class=\"menuLinks\">\n\t\t\t\t\t<li><a href=\"javascript:void(0);\"></a></li>\n\t\t\t\t\t<li><a routerLink=\"home\">Home</a></li>\n\t\t\t\t\t<li><a routerLink=\"about\">Services</a></li>\n\t\t\t\t\t<li><a routerLink=\"store\">Store</a></li>\n\t\t\t\t\t<li><a routerLink=\"contact\">Contact Me</a></li>\n\t\t\t\t</ul>\n\t\t\t\t<ul class=\"social-icons\">\n\t\t\t\t\t<li><a href=\"#\"><i class=\"fa fa-facebook\"></i></a></li>\n\t\t\t\t\t<li><a href=\"#\"><i class=\"fa fa-twitter\"></i></a></li>\n\t\t\t\t\t<li><a href=\"#\"><i class=\"fa fa-google-plus\"></i></a></li>\n\t\t\t\t</ul>\n\t\t\t</div>\n\t\t</div>\n\t"
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [core_1.ElementRef, utility_service_1.UtilityService])
     ], MobileNavigationComponent);
     return MobileNavigationComponent;
 }());

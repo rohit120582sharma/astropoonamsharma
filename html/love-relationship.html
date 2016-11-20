@@ -21,52 +21,14 @@
 		<div class="rootWrapper innerPage">
 			<!-- Header - Start -->
 			<header class="yellowGradient">
-				<div class="menuWrapper">
-					<div class="container">
-						<div class="row">
-							<div class="col-xs-12">
-								<ul class="menuLinks">
-									<li><a href="#">Home</a></li>
-									<li><a href="#">Services</a></li>
-									<li class="logo"><a href="#"><img src="../assets/images/logo.png"></a></li>
-									<li><a href="#">Store</a></li>
-									<li><a href="#">Contact Me</a></li>
-								</ul>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="spotlightWrapper">
-					<div class="banner-slider-list" id="slider-home">
-						<div class="banner-slider-item slider-love">
-							<div class="slider-img">
-								<div class="slider-content">
-									<div class="inner-text container">
-										<div class="row">
-											<div class="col-xs-12">
-												<h1>Love &amp; Relationship</h1>
-												<p>Love makes the world go round! That is why, love matters can be very painful! Now, get precise astrological guidance regarding all your love matters. When will you find true love? Is your partner your soul-mate? Should you take your relationship to the next level? We can answer all or any of these questions accurately, on the basis of your Horoscope.</p>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<ul class="slick-nav">
-						<li class="icon-left-arrow">
-							<i class="fa fa-arrow-circle-left"></i>
-						</li>
-						<li class="icon-right-arrow">
-							<i class="fa fa-arrow-circle-right"></i>
-						</li>
-					</ul>
-				</div>
+				<header-component></header-component>
 			</header>
-			<!-- Header - End -->
 
 			<!-- Section - End -->
 			<section class="mainWrapper">
+				<div class="container-fluid yellowGradient">
+					<spotlight-component title="Love &amp; Relationship" description="Love makes the world go round! That is why, love matters can be very painful! Now, get precise astrological guidance regarding all your love matters. When will you find true love? Is your partner your soul-mate? Should you take your relationship to the next level? We can answer all or any of these questions accurately, on the basis of your Horoscope." classname="slider-love"></spotlight-component>
+				</div>
 				<div class="container">
 					<div class="row">
 						<div class="col-xs-12">
@@ -108,10 +70,11 @@
 					</div>
 				</div>
 			</section>
-			<!-- Section - End -->
 
 			<!-- Footer - Start -->
-			<footer footer-component></footer>
+			<footer>
+				<footer-component></footer-component>
+			</footer>
 		</div>
 
 		<!-- Script - Start -->

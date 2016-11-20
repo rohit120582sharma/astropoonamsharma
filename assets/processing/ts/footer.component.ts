@@ -1,7 +1,7 @@
-import { Component } from "@angular/core";
+import { Component, Input, Output, ElementRef } from "@angular/core";
 
 @Component({
-	selector: '[footer-component]',
+	selector: 'footer-component',
 	template: `
 		<div class="container">
 			<div class="row">
@@ -43,6 +43,6 @@ import { Component } from "@angular/core";
 	`
 })
 export class FooterComponent{
-	constructor(){
+	constructor(private elementRef:ElementRef){
 	}
 }

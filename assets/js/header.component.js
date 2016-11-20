@@ -9,17 +9,18 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require("@angular/core");
-var header_navigation_component_1 = require("./header.navigation.component");
 var HeaderComponent = (function () {
-    function HeaderComponent() {
+    function HeaderComponent(elementRef) {
+        this.elementRef = elementRef;
     }
+    HeaderComponent.prototype.ngOnInit = function () {
+    };
     HeaderComponent = __decorate([
         core_1.Component({
-            selector: '[header-component]',
-            directives: [header_navigation_component_1.HeaderNavigationComponent],
-            template: "\n\t\t<div class=\"menuWrapper\" header-navigation-component></div>\n\t"
+            selector: 'header-component',
+            template: "\n\t\t<div class=\"menuWrapper\">\n\t\t\t<div class=\"container\">\n\t\t\t\t<div class=\"row\">\n\t\t\t\t\t<div class=\"col-xs-12\">\n\t\t\t\t\t\t<ul class=\"menuLinks\">\n\t\t\t\t\t\t\t<li><a routerLink=\"home\">Home</a></li>\n\t\t\t\t\t\t\t<li><a routerLink=\"about\">Services</a></li>\n\t\t\t\t\t\t\t<li class=\"logo\"><a href=\"javascript:void(0);\"><img src=\"../assets/images/logo.png\"></a></li>\n\t\t\t\t\t\t\t<li><a routerLink=\"store\">Store</a></li>\n\t\t\t\t\t\t\t<li><a routerLink=\"contact\">Contact Me</a></li>\n\t\t\t\t\t\t</ul>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\t"
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [core_1.ElementRef])
     ], HeaderComponent);
     return HeaderComponent;
 }());

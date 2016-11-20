@@ -9,17 +9,17 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require("@angular/core");
-var HeaderNavigationComponent = (function () {
-    function HeaderNavigationComponent() {
+var StoreComponent = (function () {
+    function StoreComponent() {
     }
-    HeaderNavigationComponent = __decorate([
+    StoreComponent = __decorate([
         core_1.Component({
-            selector: '[header-navigation-component]',
-            template: "\n\t\t<div class=\"container\">\n\t\t\t<div class=\"row\">\n\t\t\t\t<div class=\"col-xs-12\">\n\t\t\t\t\t<ul class=\"menuLinks\">\n\t\t\t\t\t\t<li><a href=\"#\">Home</a></li>\n\t\t\t\t\t\t<li><a href=\"#\">Services</a></li>\n\t\t\t\t\t\t<li class=\"logo\"><a href=\"#\"><img src=\"../assets/images/logo.png\"></a></li>\n\t\t\t\t\t\t<li><a href=\"#\">Store</a></li>\n\t\t\t\t\t\t<li><a href=\"#\">Contact Me</a></li>\n\t\t\t\t\t</ul>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\t"
+            selector: 'store-component',
+            templateUrl: 'html/store.html'
         }), 
         __metadata('design:paramtypes', [])
-    ], HeaderNavigationComponent);
-    return HeaderNavigationComponent;
+    ], StoreComponent);
+    return StoreComponent;
 }());
-exports.HeaderNavigationComponent = HeaderNavigationComponent;
-//# sourceMappingURL=header.navigation.component.js.map
+exports.StoreComponent = StoreComponent;
+//# sourceMappingURL=store.component.js.map

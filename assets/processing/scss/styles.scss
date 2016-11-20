@@ -60,6 +60,8 @@ body{
 
 		&.innerPage{
 			header{
+			}
+			.mainWrapper{
 				.spotlightWrapper{
 					height: 80vh;
 				}
@@ -259,9 +261,19 @@ header {
 			}
 		}
 	}
+}
+/********************** Header - End **********************/
 
-	/* -------------- spotlight wrapper -------------- */
+
+
+/********************** Body - Start **********************/
+.mainWrapper{
+	color: $black;
+    background-color: $white;
+
+    /* -------------- spotlight wrapper -------------- */
 	.spotlightWrapper{
+		color: $white;
 		padding: 50px 1em 1em;
 		height: 100vh;
 		min-height: 500px;
@@ -392,15 +404,7 @@ header {
 			}
 		}
 	}
-}
-/********************** Header - End **********************/
 
-
-
-/********************** Body - Start **********************/
-.mainWrapper{
-	color: $black;
-    background-color: $white;
     .container{
     	padding-top: 15px;
     	padding-bottom: 15px;

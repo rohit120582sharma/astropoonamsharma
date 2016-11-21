@@ -4,6 +4,7 @@ import { StoreDataService } from "./storedata.service";
 
 @Component({
 	selector: '[store-list-component]',
+	providers: [StoreDataService],
 	template: `
 		<div class="col-xs-12 col-sm-6 col-md-4" *ngFor="let store of stores">
 			<div class="compBox compStoreItem">

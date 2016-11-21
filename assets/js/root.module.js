@@ -11,7 +11,9 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 // Modules
 var core_1 = require("@angular/core");
 var platform_browser_1 = require("@angular/platform-browser");
-// Component : View
+// : Import Modules
+var app_routing_1 = require("./app.routing");
+// : View Modules
 var mobile_navigation_component_1 = require("./mobile.navigation.component");
 var header_component_1 = require("./header.component");
 var footer_component_1 = require("./footer.component");
@@ -22,10 +24,8 @@ var store_component_1 = require("./store.component");
 var contact_component_1 = require("./contact.component");
 var spotlight_component_1 = require("./spotlight.component");
 var storelist_component_1 = require("./storelist.component");
-// Service
+// : Services Module
 var utility_service_1 = require("./utility.service");
-var storedata_service_1 = require("./storedata.service");
-var app_routing_1 = require("./app.routing");
 var RootModule = (function () {
     function RootModule() {
     }
@@ -36,8 +36,7 @@ var RootModule = (function () {
                 app_routing_1.routing
             ],
             providers: [
-                utility_service_1.UtilityService,
-                storedata_service_1.StoreDataService
+                utility_service_1.UtilityService
             ],
             declarations: [
                 app_component_1.AppComponent,

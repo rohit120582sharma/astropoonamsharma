@@ -28,6 +28,7 @@ var StoreListComponent = (function () {
     StoreListComponent = __decorate([
         core_1.Component({
             selector: '[store-list-component]',
+            providers: [storedata_service_1.StoreDataService],
             template: "\n\t\t<div class=\"col-xs-12 col-sm-6 col-md-4\" *ngFor=\"let store of stores\">\n\t\t\t<div class=\"compBox compStoreItem\">\n\t\t\t\t<a class=\"item-thumb\" href=\"{{store.thumb}}\" rel=\"gallery\" title=\"{{store.title}}\"><img src=\"{{store.thumb}}\"></a>\n\t\t\t\t<div class=\"item-content\">\n\t\t\t\t\t<p class=\"name\">{{store.title}}</p>\n\t\t\t\t\t<p class=\"description\">{{store.description}}</p>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\t"
         }), 
         __metadata('design:paramtypes', [core_1.ElementRef, utility_service_1.UtilityService, storedata_service_1.StoreDataService])

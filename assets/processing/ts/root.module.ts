@@ -2,7 +2,9 @@
 import { NgModule } from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
 
-// Component : View
+// : Import Modules
+import { routing } from "./app.routing";
+// : View Modules
 import { MobileNavigationComponent } from "./mobile.navigation.component";
 import { HeaderComponent } from "./header.component";
 import { FooterComponent } from "./footer.component";
@@ -16,10 +18,8 @@ import { ContactComponent } from "./contact.component";
 import { SpotlightComponent } from "./spotlight.component";
 import { StoreListComponent } from "./storelist.component";
 
-// Service
+// : Services Module
 import { UtilityService } from "./utility.service";
-import { StoreDataService } from "./storedata.service";
-import { routing } from "./app.routing";
 
 
 @NgModule({
@@ -28,8 +28,7 @@ import { routing } from "./app.routing";
 		routing
 	],
 	providers: [
-		UtilityService,
-		StoreDataService
+		UtilityService
 	],
 	declarations: [
 		AppComponent,

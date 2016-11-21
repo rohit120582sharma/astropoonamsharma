@@ -1,3 +1,9 @@
+import { Injectable } from "@angular/core";
+
+declare var $: any;
+declare var TweenMax: any;
+
+@Injectable()
 export class UtilityService{
 	/* ********************** Mobile Navigation - Start ********************** */
 	hamburgerHandler(){

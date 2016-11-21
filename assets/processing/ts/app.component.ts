@@ -1,4 +1,5 @@
 import { Component } from "@angular/core";
+import { Router } from "@angular/router";
 
 @Component({
 	selector:'app-component',
@@ -7,6 +8,11 @@ import { Component } from "@angular/core";
 	`
 })
 export class AppComponent{
-	constructor(){
+	constructor(private router: Router){
+		this.router.events.subscribe((event) => {
+			console.log('route changed');
+		});
+	}
+	ngAfterViewInit(){
 	}
 }

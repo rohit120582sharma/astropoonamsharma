@@ -14,6 +14,9 @@ var ContactComponent = (function () {
     function ContactComponent(utilityService) {
         this.utilityService = utilityService;
     }
+    ContactComponent.prototype.ngOnInit = function () {
+        this.utilityService.getSelectedNav().name = "contact";
+    };
     ContactComponent.prototype.ngAfterViewInit = function () {
         this.utilityService.contactFormValidationHandler();
     };

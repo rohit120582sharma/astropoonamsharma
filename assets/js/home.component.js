@@ -9,15 +9,20 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require("@angular/core");
+var utility_service_1 = require("./utility.service");
 var HomeComponent = (function () {
-    function HomeComponent() {
+    function HomeComponent(utilityService) {
+        this.utilityService = utilityService;
     }
+    HomeComponent.prototype.ngOnInit = function () {
+        this.utilityService.getSelectedNav().name = "home";
+    };
     HomeComponent = __decorate([
         core_1.Component({
             selector: 'home-component',
             templateUrl: 'html/index.html'
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [utility_service_1.UtilityService])
     ], HomeComponent);
     return HomeComponent;
 }());

@@ -5,6 +5,22 @@ declare var TweenMax: any;
 
 @Injectable()
 export class UtilityService{
+
+	/* ********************** Variables ********************** */
+	private _selectedNav:any = {};
+	
+
+	/* ********************** Constructor ********************** */
+	constructor(){
+	}
+
+
+	/* ********************** Get/Set Methods ********************** */
+	getSelectedNav(){
+		return this._selectedNav;
+	}
+
+
 	/* ********************** Mobile Navigation - Start ********************** */
 	hamburgerHandler(){
 		var menuUL = $(".mobile-nav-icon > ul");
@@ -34,6 +50,33 @@ export class UtilityService{
 			rootWrapper.removeClass("slide");
 			mobileHeader.removeClass("slide");
 		}
+	}
+
+
+	/* ********************** Viewport - Start ********************** */
+	viewportHandler(){
+		$(window).bind("scroll", ()=>{
+			this.viewportScrollHandler();
+		});
+		this.viewportScrollHandler();
+	}
+	viewportScrollHandler(){
+		// add/remove slide class in body
+		var scrollTop = $(document).scrollTop();
+		if(scrollTop >= 120){
+			$("body").addClass("scroll");
+		}else{
+			$("body").removeClass("scroll");
+		}
+		$("[data-anim-class^='animated']").each(function(index, element){
+			var domElem = $(this);
+			var vh = verge.viewport().height * -0.25;
+			var animClass = domElem.attr("data-anim-class");
+			if(verge.inViewport(domElem, vh)){
+				domElem.css('visibility','visible');
+				domElem.addClass(animClass);
+			}
+		});
 	}
 
 

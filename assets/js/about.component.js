@@ -9,15 +9,20 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require("@angular/core");
+var utility_service_1 = require("./utility.service");
 var AboutComponent = (function () {
-    function AboutComponent() {
+    function AboutComponent(utilityService) {
+        this.utilityService = utilityService;
     }
+    AboutComponent.prototype.ngOnInit = function () {
+        this.utilityService.getSelectedNav().name = "about";
+    };
     AboutComponent = __decorate([
         core_1.Component({
             selector: 'about-component',
             templateUrl: 'html/about-me.html'
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [utility_service_1.UtilityService])
     ], AboutComponent);
     return AboutComponent;
 }());

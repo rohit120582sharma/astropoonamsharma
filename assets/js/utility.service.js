@@ -10,8 +10,15 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require("@angular/core");
 var UtilityService = (function () {
+    /* ********************** Constructor ********************** */
     function UtilityService() {
+        /* ********************** Variables ********************** */
+        this._selectedNav = {};
     }
+    /* ********************** Get/Set Methods ********************** */
+    UtilityService.prototype.getSelectedNav = function () {
+        return this._selectedNav;
+    };
     /* ********************** Mobile Navigation - Start ********************** */
     UtilityService.prototype.hamburgerHandler = function () {
         var menuUL = $(".mobile-nav-icon > ul");
@@ -42,6 +49,33 @@ var UtilityService = (function () {
             rootWrapper.removeClass("slide");
             mobileHeader.removeClass("slide");
         }
+    };
+    /* ********************** Viewport - Start ********************** */
+    UtilityService.prototype.viewportHandler = function () {
+        var _this = this;
+        $(window).bind("scroll", function () {
+            _this.viewportScrollHandler();
+        });
+        this.viewportScrollHandler();
+    };
+    UtilityService.prototype.viewportScrollHandler = function () {
+        // add/remove slide class in body
+        var scrollTop = $(document).scrollTop();
+        if (scrollTop >= 120) {
+            $("body").addClass("scroll");
+        }
+        else {
+            $("body").removeClass("scroll");
+        }
+        $("[data-anim-class^='animated']").each(function (index, element) {
+            var domElem = $(this);
+            var vh = verge.viewport().height * -0.25;
+            var animClass = domElem.attr("data-anim-class");
+            if (verge.inViewport(domElem, vh)) {
+                domElem.css('visibility', 'visible');
+                domElem.addClass(animClass);
+            }
+        });
     };
     /* ********************** Light Box - Start ********************** */
     UtilityService.prototype.lightBoxHandler = function (className) {

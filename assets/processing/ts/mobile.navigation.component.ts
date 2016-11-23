@@ -15,10 +15,10 @@ import { UtilityService } from "./utility.service";
 			<div class="mobileMenuWrapper">
 				<ul class="menuLinks">
 					<li><a href="javascript:void(0);"></a></li>
-					<li><a routerLink="home">Home</a></li>
-					<li><a routerLink="about">Services</a></li>
-					<li><a routerLink="store">Store</a></li>
-					<li><a routerLink="contact">Contact Me</a></li>
+					<li><a routerLink="home" [class.active]="_selectedNav.name=='home'">Home</a></li>
+					<li><a routerLink="about" [class.active]="_selectedNav.name=='about'">About</a></li>
+					<li><a routerLink="store" [class.active]="_selectedNav.name=='store'">Store</a></li>
+					<li><a routerLink="contact" [class.active]="_selectedNav.name=='contact'">Contact Me</a></li>
 				</ul>
 				<ul class="social-icons">
 					<li><a href="#"><i class="fa fa-facebook"></i></a></li>
@@ -30,7 +30,10 @@ import { UtilityService } from "./utility.service";
 	`
 })
 export class MobileNavigationComponent{
-	constructor(private elementRef:ElementRef, private utilityService:UtilityService){
+	private _selectedNav:any;
+
+	constructor(private elementRef:ElementRef, public utilityService:UtilityService){
+		this._selectedNav = this.utilityService.getSelectedNav();
 	}
 	ngAfterViewInit(){
 		/* ------------------ Hamburger ------------------ */

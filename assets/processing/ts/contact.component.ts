@@ -8,6 +8,9 @@ import { UtilityService } from "./utility.service";
 export class ContactComponent{
 	constructor(private utilityService:UtilityService){
 	}
+	ngOnInit(){
+		this.utilityService.getSelectedNav().name = "contact";
+	}
 	ngAfterViewInit(){
 		this.utilityService.contactFormValidationHandler();
 	}

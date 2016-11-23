@@ -14,6 +14,7 @@ var MobileNavigationComponent = (function () {
     function MobileNavigationComponent(elementRef, utilityService) {
         this.elementRef = elementRef;
         this.utilityService = utilityService;
+        this._selectedNav = this.utilityService.getSelectedNav();
     }
     MobileNavigationComponent.prototype.ngAfterViewInit = function () {
         /* ------------------ Hamburger ------------------ */
@@ -22,7 +23,7 @@ var MobileNavigationComponent = (function () {
     MobileNavigationComponent = __decorate([
         core_1.Component({
             selector: 'mobile-navigation-component',
-            template: "\n\t\t<div class=\"mobileHeader yellowGradient\">\n\t\t\t<div class=\"mobile-nav-icon\">\n\t            <ul>\n\t            \t<li class=\"first\"></li>\n\t                <li class=\"second\"></li>\n\t                <li class=\"third\"></li>\n\t            </ul>\n\t        </div>\n\t\t\t<div class=\"mobileMenuWrapper\">\n\t\t\t\t<ul class=\"menuLinks\">\n\t\t\t\t\t<li><a href=\"javascript:void(0);\"></a></li>\n\t\t\t\t\t<li><a routerLink=\"home\">Home</a></li>\n\t\t\t\t\t<li><a routerLink=\"about\">Services</a></li>\n\t\t\t\t\t<li><a routerLink=\"store\">Store</a></li>\n\t\t\t\t\t<li><a routerLink=\"contact\">Contact Me</a></li>\n\t\t\t\t</ul>\n\t\t\t\t<ul class=\"social-icons\">\n\t\t\t\t\t<li><a href=\"#\"><i class=\"fa fa-facebook\"></i></a></li>\n\t\t\t\t\t<li><a href=\"#\"><i class=\"fa fa-twitter\"></i></a></li>\n\t\t\t\t\t<li><a href=\"#\"><i class=\"fa fa-google-plus\"></i></a></li>\n\t\t\t\t</ul>\n\t\t\t</div>\n\t\t</div>\n\t"
+            template: "\n\t\t<div class=\"mobileHeader yellowGradient\">\n\t\t\t<div class=\"mobile-nav-icon\">\n\t            <ul>\n\t            \t<li class=\"first\"></li>\n\t                <li class=\"second\"></li>\n\t                <li class=\"third\"></li>\n\t            </ul>\n\t        </div>\n\t\t\t<div class=\"mobileMenuWrapper\">\n\t\t\t\t<ul class=\"menuLinks\">\n\t\t\t\t\t<li><a href=\"javascript:void(0);\"></a></li>\n\t\t\t\t\t<li><a routerLink=\"home\" [class.active]=\"_selectedNav.name=='home'\">Home</a></li>\n\t\t\t\t\t<li><a routerLink=\"about\" [class.active]=\"_selectedNav.name=='about'\">About</a></li>\n\t\t\t\t\t<li><a routerLink=\"store\" [class.active]=\"_selectedNav.name=='store'\">Store</a></li>\n\t\t\t\t\t<li><a routerLink=\"contact\" [class.active]=\"_selectedNav.name=='contact'\">Contact Me</a></li>\n\t\t\t\t</ul>\n\t\t\t\t<ul class=\"social-icons\">\n\t\t\t\t\t<li><a href=\"#\"><i class=\"fa fa-facebook\"></i></a></li>\n\t\t\t\t\t<li><a href=\"#\"><i class=\"fa fa-twitter\"></i></a></li>\n\t\t\t\t\t<li><a href=\"#\"><i class=\"fa fa-google-plus\"></i></a></li>\n\t\t\t\t</ul>\n\t\t\t</div>\n\t\t</div>\n\t"
         }), 
         __metadata('design:paramtypes', [core_1.ElementRef, utility_service_1.UtilityService])
     ], MobileNavigationComponent);

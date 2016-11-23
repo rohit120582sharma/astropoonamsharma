@@ -9,22 +9,30 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require("@angular/core");
-var router_1 = require("@angular/router");
+var utility_service_1 = require("./utility.service");
 var AppComponent = (function () {
-    function AppComponent(router) {
-        this.router = router;
-        this.router.events.subscribe(function (event) {
-            console.log('route changed');
-        });
+    function AppComponent(utilityService) {
+        this.utilityService = utilityService;
     }
+    AppComponent.prototype.ngOnChanges = function () {
+    };
+    AppComponent.prototype.ngOnInit = function () {
+    };
+    AppComponent.prototype.ngAfterContentInit = function () {
+    };
+    AppComponent.prototype.ngAfterContentChecked = function () {
+    };
     AppComponent.prototype.ngAfterViewInit = function () {
+    };
+    AppComponent.prototype.ngAfterViewChecked = function () {
+        this.utilityService.viewportHandler();
     };
     AppComponent = __decorate([
         core_1.Component({
             selector: 'app-component',
             template: "\n\t\t<router-outlet></router-outlet>\n\t"
         }), 
-        __metadata('design:paramtypes', [router_1.Router])
+        __metadata('design:paramtypes', [utility_service_1.UtilityService])
     ], AppComponent);
     return AppComponent;
 }());

@@ -4,9 +4,6 @@ $(document).ready(function(){
 	/* ------------------ Slider ------------------ */
 	homepageSpotlightSlider();
 
-	/* ------------------ Window Scroll and Viewport ------------------ */
-	viewportHandler();
-
 	/* ------------------ Accordion ------------------ */
 	accordionHandler();
 
@@ -53,34 +50,6 @@ function homepageSpotlightSlider(){
 		sliderHome.slick('slickNext');
 		return false;
 	});
-}
-
-
-
-/* ********************** Viewport - Start ********************** */
-function viewportHandler(){
-	$(window).bind("scroll", function(){
-		windowScrollHandler();
-	});
-	windowScrollHandler();
-	function windowScrollHandler(){
-		// add/remove slide class in body
-		var scrollTop = $(document).scrollTop();
-		if(scrollTop >= 120){
-			$("body").addClass("scroll");
-		}else{
-			$("body").removeClass("scroll");
-		}
-		$("[data-anim-class^='animated']").each(function(index, element){
-			var domElem = $(this);
-			var vh = verge.viewport().height * -0.25;
-			var animClass = domElem.attr("data-anim-class");
-			if(verge.inViewport(domElem, vh)){
-				domElem.css('visibility','visible');
-				domElem.addClass(animClass);
-			}
-		});
-	}
 }
 
 

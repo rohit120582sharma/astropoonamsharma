@@ -11,7 +11,7 @@ import { UtilityService } from "./utility.service";
 						<ul class="menuLinks">
 							<li><a routerLink="home" [class.active]="_selectedNav.name=='home'">Home</a></li>
 							<li><a routerLink="about" [class.active]="_selectedNav.name=='about'">About</a></li>
-							<li class="logo"><a href="javascript:void(0);"><img src="../assets/images/logo.png"></a></li>
+							<li class="logo"><a href="javascript:void(0);"><img src="assets/images/logo.png"></a></li>
 							<li><a routerLink="store" [class.active]="_selectedNav.name=='store'">Store</a></li>
 							<li><a routerLink="contact" [class.active]="_selectedNav.name=='contact'">Contact Me</a></li>
 						</ul>

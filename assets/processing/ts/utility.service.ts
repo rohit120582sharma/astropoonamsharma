@@ -1,6 +1,7 @@
 import { Injectable } from "@angular/core";
 
 declare var $: any;
+declare var verge:any;
 declare var TweenMax: any;
 
 @Injectable()

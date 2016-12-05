@@ -6,7 +6,7 @@ import { Component, Input, Output, ElementRef } from "@angular/core";
 		<div class="container">
 			<div class="row">
 				<div class="col-xs-6 col-md-4">
-					<img class="img-responsive img-footer-logo" src="../assets/images/footer-logo.jpg" alt="Sai Astro Solutions" title="Sai Astro Solutions" />
+					<img class="img-responsive img-footer-logo" src="assets/images/footer-logo.jpg" alt="Sai Astro Solutions" title="Sai Astro Solutions" />
 				</div>
 				<div class="col-xs-6 col-md-4 hidden-xs hidden-sm"></div>
 				<div class="col-xs-6 col-md-4">

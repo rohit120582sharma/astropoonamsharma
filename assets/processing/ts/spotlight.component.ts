@@ -11,7 +11,7 @@ import { Component, Input, Output, ElementRef } from "@angular/core";
 							<div class="inner-text container">
 								<div class="row">
 									<div class="col-xs-12">
-										<img *ngIf="classname == 'slider-home'" class="img-responsive img-circle astro-pic" src="../assets/images/saiastro-1.jpg">
+										<img *ngIf="classname == 'slider-home'" class="img-responsive img-circle astro-pic" src="assets/images/saiastro-1.jpg">
 										<h1>{{title}}</h1>
 										<p>{{description}}</p>
 									</div>

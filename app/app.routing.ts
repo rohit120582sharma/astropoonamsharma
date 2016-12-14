@@ -5,27 +5,27 @@ import { AboutComponent } from "./about.component";
 import { StoreComponent } from "./store.component";
 import { ContactComponent } from "./contact.component";
 
-const appRoutes:Routes[] = [
+const appRoutes:any = [
 	{
-		path:'about',
-		component:AboutComponent
+		'path':'about',
+		'component': AboutComponent
 	},
 	{
-		path:'store',
-		component:StoreComponent
+		'path':'store',
+		'component': StoreComponent
 	},
 	{
-		path:'contact',
-		component:ContactComponent
+		'path':'contact',
+		'component': ContactComponent
 	},
 	{
-		path:'home',
-		component:HomeComponent
+		'path':'home',
+		'component': HomeComponent
 	},
 	{
-		path:'',
-		pathMatch: 'full',
-		redirectTo:'/home'
+		'path':'',
+		'pathMatch': 'full',
+		'redirectTo':'home'
 	}
 ];
 
